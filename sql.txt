@@ -1,0 +1,9 @@
+CREATE DATABASE resume_analyzer;
+
+USE resume_analyzer;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL
+);

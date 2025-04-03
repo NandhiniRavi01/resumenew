@@ -1,0 +1,173 @@
+:root {
+    --primary: #5b21b6;
+    --primary-light: #7c3aed;
+    --secondary: #06b6d4;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(30, 41, 59, 0.7); /* Darkened background for job description box */
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+    
+}
+
+.pulse-animation {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--success);
+    animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+h1 .badge {
+    position: relative;
+    top: -10px;
+    background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+    letter-spacing: 0.5px;
+    -webkit-text-fill-color: white;
+}
+
+.input-field, .btn, .file-drop-area, .job-description-box {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9); /* Darkened all boxes */
+    border: 2px dashed rgba(124, 58, 237, 0.4);
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.input-field:focus, .file-drop-area {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3);
+    transform: scale(1.02);
+}
+
+.file-drop-area {
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.file-drop-area:hover {
+    transform: scale(1.05);
+    border-color: var(--primary);
+}
+
+.upload-area {
+    background: rgba(15, 23, 42, 0.9); /* Darkened upload area */
+    border: 2px dashed rgba(124, 58, 237, 0.4);
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+.upload-text {
+    color: var(--light);
+    font-size: 1rem;
+}
+
+.upload-text strong {
+    color: var(--primary-light);
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--success);
+    display: none;
+}
+
+.btn {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    margin-top: 5px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 10px 20px -10px rgba(124, 58, 237, 0.5);
+    transform: translateY(-3px);
+}
